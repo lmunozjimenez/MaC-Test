@@ -29,8 +29,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
+      - name: Check out repo
+        uses: actions/checkout@main
+      
+      - uses: actions/setup-python@v1
+        with:
+          python-version: '3.7.x'
+          
       # Runs a single command using the runners shell
       - name: install dependencies
         run: |
@@ -38,4 +43,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Apply monitor configuration in Monte Carlo
-        run: montecarlo monitors apply --namespace laura_test
+        run: montecarlo monitors apply --namespace laura_test_gh
