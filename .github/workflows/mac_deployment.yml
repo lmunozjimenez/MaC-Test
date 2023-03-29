@@ -43,4 +43,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Apply monitor configuration in Monte Carlo
-        run: montecarlo monitors apply --namespace laura_test_gh
+        run: montecarlo monitors apply --namespace laura_test_gh --no-prompt
